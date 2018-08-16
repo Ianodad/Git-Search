@@ -1,8 +1,15 @@
-import { Injectable } from "@angular/core";
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: "root"
+  providedIn: 'root'
 })
 export class GitService {
-  constructor() {}
+  constructor(private http: HttpClient) {}
+
+  gitApi() {
+    return this.http.get('https://api.github.com/users').subscribe(data => {
+      console.log(data);
+    });
+  }
 }

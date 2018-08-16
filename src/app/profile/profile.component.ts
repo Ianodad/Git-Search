@@ -12,6 +12,6 @@ export class ProfileComponent implements OnInit {
   constructor(private gitGitService: GitService) {}
 
   ngOnInit() {
-    // this.gitGitService;
+    this.gitGitService.gitApi();
   }
 }
