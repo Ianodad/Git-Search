@@ -1,0 +1,13 @@
+.navbar-nav>li {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+.navbar-nav>li :hover {
+  color: #02c9a7;
+}
+
+.navbar {
+  background-color: none;
+  border-bottom: 6px solid #02c9a7;
+}
