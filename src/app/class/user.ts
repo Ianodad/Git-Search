@@ -3,6 +3,6 @@ export class User {
     public img: string,
     public name: string,
     public repoUrl: string,
-    userUrl: string
+    public userUrl: string
   ) {}
 }

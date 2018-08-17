@@ -1,3 +1,4 @@
+import { User } from './../class/user';
 import { GitService } from './../service/git.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -9,6 +10,10 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
+
+
+  user: User;
+
   constructor(private gitGitService: GitService) {}
 
   ngOnInit() {
