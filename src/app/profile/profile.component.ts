@@ -10,13 +10,12 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
-
   user: User;
-
-  constructor(private gitGitService: GitService) {}
+  constructor(private gitService: GitService) {}
 
   ngOnInit() {
-    this.gitGitService.gitApi();
+    this.gitService.gitApi();
+    this.user = this.gitService.user;
   }
+
 }

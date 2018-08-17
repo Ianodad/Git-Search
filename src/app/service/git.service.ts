@@ -8,19 +8,22 @@ import { Repository } from './../class/repository';
   providedIn: 'root'
 })
 export class GitService {
-  constructor(private http: HttpClient) {}
-
   // user type assigned //
   user: User;
+
+  constructor(private http: HttpClient) {
+    this.user = new User('', '', '', '', '');
+  }
 
   // defining user interface //
 
   gitApi() {
     interface ApiResponse {
       img: string;
-      name: string;
+      userName: string;
       repoUrl: string;
       userUrl: string;
+      repos: string;
     }
 
     let promise = new Promise((resolve, reject) => {
@@ -32,10 +35,19 @@ export class GitService {
         .toPromise()
         .then(
           response => {
+            // These is where we hold the data to a new array//
+            this.user.img = response.avatar_url;
+            this.user.userName = response.name;
+            this.user.repoUrl = response.repos_url;
+            this.user.userUrl = response.url;
+            this.user.repos = response.public_repos;
+            // response ends here//
             console.log(response);
             resolve();
           },
-          error => {}
+          error => {
+            // ERROR GOES HERE //
+          }
         );
     });
 
