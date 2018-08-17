@@ -1,9 +1,10 @@
 export class User {
   constructor(
-    public img: string,
+    public avatar_url: string,
     public name: string,
-    public repoUrl: string,
-    public userUrl: string,
-    public repos: string
+    public login: string,
+    public repos_url: string,
+    public url: string,
+    public public_repos: string
   ) {}
 }

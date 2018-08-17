@@ -12,18 +12,19 @@ export class GitService {
   user: User;
 
   constructor(private http: HttpClient) {
-    this.user = new User('', '', '', '', '');
+    this.user = new User('', '', '', '', '', '');
   }
 
   // defining user interface //
 
   gitApi() {
     interface ApiResponse {
-      img: string;
-      userName: string;
-      repoUrl: string;
-      userUrl: string;
-      repos: string;
+      avatar_url: string;
+      name: string;
+      login: string;
+      repos_url: string;
+      url: string;
+      public_repos: string;
     }
 
     let promise = new Promise((resolve, reject) => {
@@ -36,21 +37,22 @@ export class GitService {
         .then(
           response => {
             // These is where we hold the data to a new array//
-            this.user.img = response.avatar_url;
-            this.user.userName = response.name;
-            this.user.repoUrl = response.repos_url;
-            this.user.userUrl = response.url;
-            this.user.repos = response.public_repos;
+            this.user.avatar_url = response.avatar_url;
+            this.user.name = response.name;
+            this.user.login = response.login;
+            this.user.repos_url = response.repos_url;
+            this.user.url = response.url;
+            this.user.public_repos = response.public_repos;
             // response ends here//
             console.log(response);
             resolve();
           },
           error => {
-            // ERROR GOES HERE //
+            console.log('error');
+            reject();
           }
         );
     });
-
     return promise;
   }
 }
