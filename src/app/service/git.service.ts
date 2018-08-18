@@ -17,7 +17,7 @@ export class GitService {
 
   // defining user interface //
 
-  gitApi() {
+  gitUser() {
     interface ApiResponse {
       avatar_url: string;
       name: string;
@@ -54,5 +54,33 @@ export class GitService {
         );
     });
     return promise;
+  }
+
+  getRepo () {
+    interface ApiResponse {
+      quote: string;
+      author: string
+
+    }
+    let promise = new Promise((resolve, reject) => {
+      this.http.get<ApiResponse>('https://api.github.com/users/ianodad/repos?access_token=' +
+        environment.accessToken).toPromise().then(response => {
+
+        console.log(response)
+
+        resolve()
+      },
+        error => {
+          // this.quote.quote = "Never, never, never give up."
+          // this.quote.author = "winston churchill"
+          reject(error)
+        }
+      )
+    })
+
+    return promise
+  }
+
+
   }
 }

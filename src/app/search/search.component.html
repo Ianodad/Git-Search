@@ -1,4 +1,5 @@
-<form class="form-inline md-form form-sm active-purple-2">
-  <input class="form-control form-control-sm mr-3 w-50" type="text" placeholder="Search" aria-label="Search">
+<form class="form-inline md-form form-sm active-purple-2" (ngSubmit)='searchSubmit()' #search='ngForm'>
+  <input class="form-control form-control-sm mr-3 w-50" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="search.name"
+    name="search" #name="ngModel">
   <i class="fa fa-search" aria-hidden="true"></i>
 </form>
