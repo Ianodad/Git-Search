@@ -17,14 +17,15 @@
             </div>
           </li>
           <li class="list-group-item">
-            <div class="more-deatils">
-              <app-profile-details [user]='user'></app-profile-details>
+            <button type="button" (click)='toogleDetails(i)' class="btn">More Details</button>
+            <div class="more-deatils ">
+              <app-profile-details *ngIf="user.showDetails" [user]='user'></app-profile-details>
             </div>
           </li>
         </ul>
       </div>
     </div>
-    <div class="col-md-8">
+    <div class="col-md-8 ">
       <app-repo-view></app-repo-view>
     </div>
   </div>

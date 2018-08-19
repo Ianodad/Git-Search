@@ -14,6 +14,10 @@ export class ProfileComponent implements OnInit {
 
   constructor(private gitService: GitService) {}
 
+  toogleDetails(index) {
+    this.user.showDetails = !this.user.showDetails;
+  }
+
   ngOnInit() {
     this.gitService.gitUser();
     this.user = this.gitService.user;

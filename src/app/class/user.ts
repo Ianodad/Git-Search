@@ -1,4 +1,5 @@
 export class User {
+  public showDetails: boolean;
   constructor(
     public avatar_url: string,
     public name: string,
@@ -7,5 +8,7 @@ export class User {
     public bio: string,
     public url: string,
     public public_repos: string
-  ) {}
+  ) {
+    this.showDetails = false;
+  }
 }

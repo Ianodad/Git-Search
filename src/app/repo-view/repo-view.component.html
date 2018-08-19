@@ -1,24 +1,19 @@
-<div class="container-fluid">
-  <div class="card" *ngFor='let repo of newRepos.newRepos'>
-    <div class="card-header">
+<div class="container-fluid d-flex  align-content-start flex-wrap">
+  <div class="card border-success mb-3 m-2 row" style="max-width: 25rem;" *ngFor='let repo of newRepos.newRepos'>
+    <div class="card-header bg-transparent border-success">
       <h2>{{repo.name}}
       </h2>
     </div>
-    <div class="card-body">
-      <blockquote class="blockquote mb-0">
-        <h2>{{repo.owner.login}}</h2>
-        <p>{{repo.language}}.</p>
-        <p>{{repo.git_url}}</p>
-        <p>{{repo.created_at}}</p>
-        <p>{{repo.size}}</p>
-        <p>{{repo.html_url}}</p>
-
-        <footer class="blockquote-footer">Someone famous in
-          <cite title="Source Title">Source Title</cite>
-        </footer>
-      </blockquote>
+    <div class="card-body text-success">
+      <p>{{repo.language}}.</p>
+      <p>{{repo.git_url}}</p>
+      <p>{{repo.created_at}}</p>
+      <p>{{repo.size}}</p>
+      <p>{{repo.html_url}}</p>
+    </div>
+    <div class="card-footer bg-transparent border-success d-flex">
+      <h2 class="mr-auto">USER</h2>
+      <h2>{{repo.owner.login}}</h2>
     </div>
   </div>
-</div>
-<div *ngFor='let repo of newRepos.newRepos;let i = index'>
 </div>
