@@ -7,6 +7,7 @@ import { RepoViewComponent } from './repo-view/repo-view.component';
 import { SearchComponent } from './search/search.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ProfileDetailsComponent } from './profile-details/profile-details.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HttpClientModule } from '@angular/common/http';
     ProfileComponent,
     RepoViewComponent,
     SearchComponent,
-    MenuComponent
+    MenuComponent,
+    ProfileDetailsComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

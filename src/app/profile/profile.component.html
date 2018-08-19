@@ -2,33 +2,26 @@
   <app-search></app-search>
   <div class="row">
     <div class="card-deck w-50 col-md-4">
-      <div class=" card ">
+      <div class="card">
         <img class="card-img-top " src={{user.avatar_url}} alt=" ">
         <div class="card-body ">
-          <div class="forks row ">
-            <p class="card-text ">User Login Name</p>
-            <p class="card-text float-right ">{{user.login}}</p>
+          <div class="user-name">
+            <h4 class="card-text">{{user.name}}</h4>
           </div>
-          <div class="title row ">
-            <h4 class="card-title ">User Name</h4>
-            <p class="card-text ">{{user.name}}</p>
-          </div>
-          <div class="repos row ">
-            <p class="card-text ">Repos Url</p>
-            <a href={{user.repos_url}} target="_top ">Click here to view</a>
-          </div>
-          <div class="comments row ">
-            <p class="card-text float-right ">View Repos</p>
-            <a href={{user.repos_url}} target="_top ">Click here to view</a>
-
-            <p class="card-text "></p>
-          </div>
-          <div class="profile row ">
-            <p class="card-text ">Number of Repos</p>
-            <p class="card-text float-right ">{{user.public_repos}}</p>
-          </div>
-
         </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <div class="d-flex">
+              <p class="card-text mr-auto">Login Name</p>
+              <p class="card-text">{{user.login}}</p>
+            </div>
+          </li>
+          <li class="list-group-item">
+            <div class="more-deatils">
+              <app-profile-details [user]='user'></app-profile-details>
+            </div>
+          </li>
+        </ul>
       </div>
     </div>
     <div class="col-md-8">

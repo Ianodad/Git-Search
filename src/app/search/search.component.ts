@@ -10,6 +10,12 @@ import { Component, OnInit } from '@angular/core';
 export class SearchComponent implements OnInit {
   constructor(private gitService: GitService) {}
 
-  searchSubmit() {}
-  ngOnInit() {}
+  searchSubmit(search) {
+    
+
+  }
+  ngOnInit() {
+    this.gitService.getRepo();
+    this.gitService.gitUser();
+  }
 }
