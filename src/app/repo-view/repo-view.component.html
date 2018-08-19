@@ -1,15 +1,15 @@
 <div class="container-fluid d-flex  align-content-start flex-wrap">
   <div class="card border-success mb-3 m-2 row" style="max-width: 25rem;" *ngFor='let repo of newRepos.newRepos'>
     <div class="card-header bg-transparent border-success">
-      <h2>{{repo.name}}
+      <h2>{{repo.name | uppercase}}
       </h2>
+      <button type="button" class="btn btn-outline-warning" (click)='toogleDetails()'>More</button>
+
     </div>
     <div class="card-body text-success">
-      <p>{{repo.language}}.</p>
-      <p>{{repo.git_url}}</p>
-      <p>{{repo.created_at}}</p>
-      <p>{{repo.size}}</p>
-      <p>{{repo.html_url}}</p>
+      
+<!-- <app-repo-view-details></app-repo-view-details> -->
+
     </div>
     <div class="card-footer bg-transparent border-success d-flex">
       <h2 class="mr-auto">USER</h2>

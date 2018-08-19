@@ -1,3 +1,6 @@
 export class Repository {
-  constructor(public name: string) {}
+  public showDetails: boolean;
+  constructor(public name: string) {
+    this.showDetails = false;
+  }
 }

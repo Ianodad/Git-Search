@@ -9,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./repo-view.component.css']
 })
 export class RepoViewComponent implements OnInit {
-  repos: Repository[];
+  repos: Repository;
   newRepos: any;
 
+  toogleDetails(index) {
+    this.repos.showDetails = !this.repos.showDetails;
+  }
   constructor(public gitService: GitService) {}
 
   ngOnInit() {

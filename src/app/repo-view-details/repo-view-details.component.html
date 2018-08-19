@@ -1,3 +1,38 @@
-<p>
-  repo-view-details works!
-</p>
+<div class="container">
+  <h3>A demo of Bootstrap Card</h3>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="card text-dark bg-light" *ngFor='let repo of newRepos.newRepos'>
+        <div class="card-header bg-dark text-center text-light">
+          <h4>
+            {{repo.name | uppercase}}
+          </h4>
+        </div>
+        <div class="card-body ">
+          <h5 class="card-title">Category 1 Tuts</h5>
+          <div class="list-group">
+            <a href="" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-primary">{{repo.language}}
+              <span class="badge badge-primary badge-pill">55</span>
+            </a>
+            <a href="{{repo.git_url}}" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-danger">git url
+              <span class="badge badge-primary badge-pill">23</span>
+            </a>
+            <a href="" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-success">
+              {{repo.created_at}}
+              <span class="badge badge-primary badge-pill">109</span>
+            </a>
+            <a href="" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-info">Repo size
+              <span class="badge badge-primary badge-pill">{{repo.size}}</span>
+            </a>
+            <a href="{{repo.html_url}}" class="list-group-item d-flex justify-content-between align-items-center list-group-item-action list-group-item-secondary disabled">Website Url
+              <span class="badge badge-primary badge-pill">0</span>
+            </a>
+          </div>
+        </div>
+        <div class="card-footer bg-secondary border-danger text-right">
+          <a href="#" class="btn btn-info btn-sm">back</a>
+          <a href="#" class="btn btn-success btn-sm">next</a>
+        </div>
+      </div>
+    </div>
+  </div>
