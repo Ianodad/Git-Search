@@ -3,6 +3,7 @@ import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Repository } from './../class/repository';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -10,9 +11,12 @@ import { Repository } from './../class/repository';
 export class GitService {
   // user type assigned //
   user: User;
+  repos: Repository;
+  newRepos: any;
 
   constructor(private http: HttpClient) {
     this.user = new User('', '', '', '', '', '');
+    this.repos = new Repository('');
   }
 
   // defining user interface //
@@ -44,7 +48,7 @@ export class GitService {
             this.user.url = response.url;
             this.user.public_repos = response.public_repos;
             // response ends here//
-            console.log(response);
+            // console.log(response);
             resolve();
           },
           error => {
@@ -56,31 +60,38 @@ export class GitService {
     return promise;
   }
 
-  getRepo () {
+  getRepo() {
     interface ApiResponse {
-      quote: string;
-      author: string
-
+      name: string;
+      login: string;
+      url: string;
+      html_url: string;
+      created_at: string;
     }
     let promise = new Promise((resolve, reject) => {
-      this.http.get<ApiResponse>('https://api.github.com/users/ianodad/repos?access_token=' +
-        environment.accessToken).toPromise().then(response => {
+      this.http
+        .get<ApiResponse>(
+          'https://api.github.com/users/ianodad/repos?access_token=' +
+            environment.accessToken
+        )
+        .toPromise()
+        .then(
+          response => {
+            this.newRepos = response;
+            // response.forEach(element => {
+            //   // this.repos = element.name;
+            //   console.log(element.name);
+            //   // console.log(element.name);
+            // });
+            // console.log(response);
 
-        console.log(response)
-
-        resolve()
-      },
-        error => {
-          // this.quote.quote = "Never, never, never give up."
-          // this.quote.author = "winston churchill"
-          reject(error)
-        }
-      )
-    })
-
-    return promise
-  }
-
-
+            resolve();
+          },
+          error => {
+            reject(error);
+          }
+        );
+    });
+    return promise;
   }
 }

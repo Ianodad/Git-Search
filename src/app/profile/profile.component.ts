@@ -17,6 +17,6 @@ export class ProfileComponent implements OnInit {
   ngOnInit() {
     this.gitService.gitUser();
     this.user = this.gitService.user;
-    console.log(this.user);
+    // console.log(this.user);
   }
 }

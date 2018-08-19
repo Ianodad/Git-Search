@@ -5,19 +5,20 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-repo-view',
   templateUrl: './repo-view.component.html',
-  providers [GitService]
+  providers: [GitService],
   styleUrls: ['./repo-view.component.css']
 })
 export class RepoViewComponent implements OnInit {
+  repos: Repository[];
+  newRepos: any;
 
-  repos: Repository;
-
-  constructor(private gitService: GitService) { }
+  constructor(public gitService: GitService) {}
 
   ngOnInit() {
     this.gitService.getRepo();
-    this.repo = this.gitService
-    console.log(repo)
+    console.log(this.gitService.newRepos);
+    this.newRepos = this.gitService;
+    console.log(this.newRepos);
+    // console.log(this.repos);
   }
-
 }
