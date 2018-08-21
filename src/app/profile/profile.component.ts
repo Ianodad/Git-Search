@@ -1,3 +1,4 @@
+// import { Search } from './../class/search';
 import { User } from './../class/user';
 import { GitService } from './../service/git.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileComponent implements OnInit {
   user: User;
-  private userName = '';
+  userName: any;
 
   constructor(private gitService: GitService) {}
 

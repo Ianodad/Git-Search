@@ -1,3 +1,4 @@
+// import { Search } from './../class/search';
 import { Repository } from './../class/repository';
 import { GitService } from './../service/git.service';
 import { Component, OnInit } from '@angular/core';
@@ -11,7 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class RepoViewComponent implements OnInit {
   repos: Repository;
   newRepos: any;
-  name: any;
+  userName: any;
 
   toogleDetails(index) {
     this.repos.showDetails = !this.repos.showDetails;
@@ -20,7 +21,7 @@ export class RepoViewComponent implements OnInit {
   constructor(public gitService: GitService) {}
 
   ngOnInit() {
-    this.gitService.getRepo('ianodad');
+    this.gitService.getRepo(this.userName);
     // console.log(this.gitService.newRepos);
     this.newRepos = this.gitService;
     console.log(this.newRepos);

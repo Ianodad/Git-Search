@@ -1,4 +1,4 @@
-import { SearchComponent } from './../search/search.component';
+import { Search } from './../class/search';
 import { User } from './../class/user';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -14,8 +14,8 @@ export class GitService {
   user: User;
   repos: Repository;
   newRepos: any;
-  // private userName = 'ianodad';
-  private newRepo = '';
+  userName: Search;
+  newRepo = '';
 
   constructor(private http: HttpClient) {
     this.user = new User('', '', '', '', '', '', '');
