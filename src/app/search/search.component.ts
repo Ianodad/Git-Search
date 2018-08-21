@@ -1,5 +1,5 @@
 import { GitService } from './../service/git.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-search',
@@ -8,14 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  // newName: any;
+
   constructor(private gitService: GitService) {}
 
-  searchSubmit(search) {
-    
-
+  searchSubmit($newName) {
+    // console.log($newName.target.value);
+    this.gitService.gitUser($newName.target.value);
   }
   ngOnInit() {
-    this.gitService.getRepo();
-    this.gitService.gitUser();
+    // this.gitService.getRepo();
+    // this.gitService.gitUser();
   }
 }

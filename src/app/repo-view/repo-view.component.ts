@@ -11,15 +11,17 @@ import { Component, OnInit } from '@angular/core';
 export class RepoViewComponent implements OnInit {
   repos: Repository;
   newRepos: any;
+  name: any;
 
   toogleDetails(index) {
     this.repos.showDetails = !this.repos.showDetails;
   }
+
   constructor(public gitService: GitService) {}
 
   ngOnInit() {
-    this.gitService.getRepo();
-    console.log(this.gitService.newRepos);
+    this.gitService.getRepo('ianodad');
+    // console.log(this.gitService.newRepos);
     this.newRepos = this.gitService;
     console.log(this.newRepos);
     // console.log(this.repos);

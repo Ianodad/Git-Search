@@ -1,5 +1,5 @@
-<form class="form-inline md-form form-sm active-purple-2" (ngSubmit)='searchSubmit()' #search='ngForm'>
-  <input class="form-control form-control-sm mr-3 w-50" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="search.name"
-    name="search" #name="ngModel">
+<form class="form-inline md-form form-md active-purple-2 d-flex flex-nowrap form-group">
+  <input class="form-control form-control-md mr-3" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="search"
+    name="search" (keyup)='searchSubmit($event)'>
   <i class="fa fa-search" aria-hidden="true"></i>
 </form>

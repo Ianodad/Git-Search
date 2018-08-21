@@ -7,8 +7,10 @@ import { RepoViewComponent } from './repo-view/repo-view.component';
 import { SearchComponent } from './search/search.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileDetailsComponent } from './profile-details/profile-details.component';
 import { RepoViewDetailsComponent } from './repo-view-details/repo-view-details.component';
+import { RoutingModule } from './routing/routing.module';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { HoverDirective } from './hover.directive';
 
 @NgModule({
   declarations: [
@@ -17,10 +19,17 @@ import { RepoViewDetailsComponent } from './repo-view-details/repo-view-details.
     RepoViewComponent,
     SearchComponent,
     MenuComponent,
-    ProfileDetailsComponent,
-    RepoViewDetailsComponent
+    RepoViewDetailsComponent,
+    NotFoundComponent,
+    HoverDirective
   ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
+  imports: [
+    BrowserModule,
+    HttpClientModule,
+    RoutingModule,
+    FormsModule
+    // RouterModule.forRoot(routes)
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

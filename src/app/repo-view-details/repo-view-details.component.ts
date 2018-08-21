@@ -15,8 +15,7 @@ export class RepoViewDetailsComponent implements OnInit {
   constructor(private gitService: GitService) {}
 
   ngOnInit() {
-    this.gitService.getRepo();
-    console.log(this.gitService.newRepos);
+    this.gitService.getRepo('Ianodad');
     this.newRepos = this.gitService;
     console.log(this.newRepos);
   }

@@ -1,16 +1,16 @@
 <div class="container-fluid d-flex  align-content-start flex-wrap">
-  <div class="card border-success mb-3 m-2 row" style="max-width: 25rem;" *ngFor='let repo of newRepos.newRepos'>
+  <div class="card border-success mb-3 m-2 row  w-50 " style="max-width: 20rem;" *ngFor='let repo of newRepos.newRepos' appHover>
     <div class="card-header bg-transparent border-success">
-      <h2>{{repo.name | uppercase}}
-      </h2>
-      <button type="button" class="btn btn-outline-warning" (click)='toogleDetails()'>More</button>
-
+      <div class="repo-head d-flex">
+        <h2 class="mr-auto">{{repo.name | uppercase}}
+        </h2>
+      </div>
     </div>
-    <div class="card-body text-success">
-      
-<!-- <app-repo-view-details></app-repo-view-details> -->
+    <!-- <div class="card-body text-success"> -->
 
-    </div>
+    <!-- <app-repo-view-details></app-repo-view-details> -->
+
+    <!-- </div> -->
     <div class="card-footer bg-transparent border-success d-flex">
       <h2 class="mr-auto">USER</h2>
       <h2>{{repo.owner.login}}</h2>

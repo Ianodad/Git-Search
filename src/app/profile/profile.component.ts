@@ -11,6 +11,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProfileComponent implements OnInit {
   user: User;
+  private userName = '';
 
   constructor(private gitService: GitService) {}
 
@@ -19,7 +20,7 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.gitService.gitUser();
+    this.gitService.gitUser(this.userName);
     this.user = this.gitService.user;
     // console.log(this.user);
   }

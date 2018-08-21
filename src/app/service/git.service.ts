@@ -1,3 +1,4 @@
+import { SearchComponent } from './../search/search.component';
 import { User } from './../class/user';
 import { environment } from './../../environments/environment';
 import { HttpClient } from '@angular/common/http';
@@ -13,15 +14,24 @@ export class GitService {
   user: User;
   repos: Repository;
   newRepos: any;
+  // private userName = 'ianodad';
+  private newRepo = '';
 
   constructor(private http: HttpClient) {
     this.user = new User('', '', '', '', '', '', '');
-    this.repos = new Repository('');
+    // this.repos = new Repository('');
+  }
+
+  userUpdate(newName: any) {
+    // this.userName = this.newName;
+  }
+  repoUpdate(newRepo) {
+    // this.newRepo = this.newRepo;
   }
 
   // defining user interface //
 
-  gitUser() {
+  gitUser(userName) {
     interface ApiResponse {
       avatar_url: string;
       name: string;
@@ -35,7 +45,9 @@ export class GitService {
     let promise = new Promise((resolve, reject) => {
       this.http
         .get<ApiResponse>(
-          'https://api.github.com/users/ianodad?access_token=' +
+          'https://api.github.com/users/' +
+            userName +
+            '?access_token=' +
             environment.accessToken
         )
         .toPromise()
@@ -52,17 +64,17 @@ export class GitService {
             // response ends here//
             console.log(response);
             resolve();
-          },
-          error => {
-            console.log('error');
-            reject();
           }
+          // error => {
+          //   console.log('error');
+          //   reject();
+          // }
         );
     });
     return promise;
   }
 
-  getRepo() {
+  getRepo(userName) {
     interface ApiResponse {
       name: string;
       login: string;
@@ -73,7 +85,9 @@ export class GitService {
     let promise = new Promise((resolve, reject) => {
       this.http
         .get<ApiResponse>(
-          'https://api.github.com/users/ianodad/repos?access_token=' +
+          'https://api.github.com/users/' +
+            userName +
+            '/repos?access_token=' +
             environment.accessToken
         )
         .toPromise()
