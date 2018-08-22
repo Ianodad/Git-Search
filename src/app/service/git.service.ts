@@ -21,7 +21,7 @@ export class GitService {
 
   // defining user interface //
 
-  gitUser() {
+  gitUser(userName = 'ianodad') {
     interface ApiResponse {
       avatar_url: string;
       name: string;
@@ -35,7 +35,9 @@ export class GitService {
     let promise = new Promise((resolve, reject) => {
       this.http
         .get<ApiResponse>(
-          'https://api.github.com/users/ianodad?access_token=' +
+          'https://api.github.com/users/' +
+            userName +
+            '?access_token=' +
             environment.accessToken
         )
         .toPromise()

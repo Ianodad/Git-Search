@@ -8,11 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./search.component.css']
 })
 export class SearchComponent implements OnInit {
+  searchstring = '';
   constructor(private gitService: GitService) {}
 
-  searchSubmit(search) {
-    
-
+  search() {
+    this.gitService.gitUser(this.searchstring);
+    console.log(this.searchstring);
   }
   ngOnInit() {
     this.gitService.getRepo();
