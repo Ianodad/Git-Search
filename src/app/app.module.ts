@@ -9,7 +9,6 @@ import { RepoViewDetailsComponent } from './repo-view-details/repo-view-details.
 import { RoutingModule } from './routing/routing.module';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HoverDirective } from './hover.directive';
-import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +18,7 @@ import { FilterPipe } from './filter.pipe';
     RepoViewDetailsComponent,
     NotFoundComponent,
     HoverDirective,
-    FilterPipe
+
   ],
   imports: [
     BrowserModule,

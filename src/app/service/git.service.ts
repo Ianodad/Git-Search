@@ -62,7 +62,7 @@ export class GitService {
             this.user.url = response.url;
             this.user.public_repos = response.public_repos;
             // response ends here//
-            console.log(response);
+            // console.log(response);
             resolve();
           }
           // error => {

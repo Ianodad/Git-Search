@@ -10,12 +10,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   userName = 'ianodad';
+  search = '';
 
   constructor(private gitService: GitService) {}
 
-  searchSubmit(newName) {
-    this.userName = newName;
+  searchSubmit(event) {
     console.log(this.userName);
-    this.gitService.gitUser(this.userName);
+    this.gitService.gitUser(this.userName).then(info => {
+      console.log(info);
+    });
   }
 }
