@@ -22,7 +22,7 @@ export class ProfileComponent implements OnInit {
 
   ngOnInit() {
     this.gitService.gitUser(this.userName);
-    this.user = this.gitService;
+    this.user = this.gitService.user;
     console.log(this.user);
   }
 }
