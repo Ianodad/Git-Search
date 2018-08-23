@@ -1,5 +1,5 @@
 <div class="container-fluid d-flex flex-wrap">
-  <div class="card border-success mb-3 m-2 row" *ngFor='let repo of newRepos.newRepos'>
+  <div class="card border-success mb-3 m-2 row" *ngFor='let repo of newRepos.newRepos' appHoover>
     <div class="card-header bg-transparent border-success">
       <h2>{{repo.name | uppercase}}
       </h2>

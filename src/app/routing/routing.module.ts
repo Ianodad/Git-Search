@@ -1,4 +1,4 @@
-mport { NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -19,4 +19,4 @@ const routes: Routes = [
   exports: [RouterModule],
   declarations: []
 })
-export class RoutingModule { }
+export class RoutingModule {}

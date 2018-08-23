@@ -10,6 +10,7 @@ import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RoutingModule } from './routing/routing.module';
+import { HooverDirective } from './hoover.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { RoutingModule } from './routing/routing.module';
     SearchComponent,
     MenuComponent,
     NotFoundComponent,
-    RepoViewDetailsComponent
+    RepoViewDetailsComponent,
+    HooverDirective
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],

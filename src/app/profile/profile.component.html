@@ -15,34 +15,37 @@
         <!-- Quotation -->
         <p>
           <i class="fa fa-quote-left"></i> {{user.bio}}</p>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="d-flex">
-              <p class="card-text mr-auto">Login Name</p>
-              <p class="card-text">{{user.login}}</p>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="repos d-flex">
-              <p class="card-text mr-auto">Repos Url</p>
-              <a href={{user.html_url}} target="_top ">Click here to view</a>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="view d-flex">
-              <p class="card-text mr-auto ">View Repos</p>
-              <p>
-                <a href={{user.public_repos}} target="_top ">Click here to view</a>
-              </p>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="profile d-flex ">
-              <p class="card-text mr-auto">Number of Repos</p>
-              <p class="card-text float-right ">{{user.public_repos}}</p>
-            </div>
-          </li>
-        </ul>
+          <button type="button" (click)='toogleDetails()' class="btn">More Details</button>
+        <div class="readmore" *ngIf="user.showDetails">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex">
+                <p class="card-text mr-auto">Login Name</p>
+                <p class="card-text">{{user.login}}</p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="repos d-flex">
+                <p class="card-text mr-auto">Repos Url</p>
+                <a href={{user.html_url}} target="_top ">Click here to view</a>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="view d-flex">
+                <p class="card-text mr-auto ">View Repos</p>
+                <p>
+                  <a href={{user.public_repos}} target="_top ">Click here to view</a>
+                </p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="profile d-flex ">
+                <p class="card-text mr-auto">Number of Repos</p>
+                <p class="card-text float-right ">{{user.public_repos}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
