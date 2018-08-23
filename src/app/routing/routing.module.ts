@@ -1,10 +1,11 @@
-import { NgModule } from '@angular/core';
+mport { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from '@angular/router';
 
-import { RepoViewDetailsComponent } from './../repo-view-details/repo-view-details.component';
 import { ProfileComponent } from './../profile/profile.component';
-import { NotFoundComponent } from './../not-found/not-found.component';
+import { RepoViewDetailsComponent } from './../repo-view-details/repo-view-details.component';
+import { RepoViewComponent } from './../repo-view/repo-view.component';
+import { NotFoundComponent } from '../not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'profile', component: ProfileComponent },
@@ -12,8 +13,10 @@ const routes: Routes = [
   { path: '', redirectTo: '/profile', pathMatch: 'full' },
   { path: '**', component: NotFoundComponent }
 ];
+
 @NgModule({
   imports: [CommonModule, RouterModule.forRoot(routes)],
+  exports: [RouterModule],
   declarations: []
 })
-export class RoutingModule {}
+export class RoutingModule { }

@@ -1,26 +1,7 @@
 <!--The content below is only a placeholder and can be replaced.-->
 
 <div class="container-fluid">
-  <div class="container">
-    <nav class="navbar navbar-expand-sm navbar-light justify-content-center pb-0 ">
-      <a class="navbar-brand display-4" href="#">Home</a>
-      <app-search></app-search>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item active">
-            <a routerLink='/profile' routerLinkActive='active'>Profile
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a routerLink='/repo-view-details' routerLinkActive='active'>Repositories</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-    <router-outlet></router-outlet>
-
-  </div>
-  <app-profile></app-profile>
-
+  <!-- <app-menu></app-menu>
+  <app-profile></app-profile> -->
+  <app-repo-view-details></app-repo-view-details>
 </div>

@@ -1,3 +1,4 @@
+import { RepoViewDetailsComponent } from './repo-view-details/repo-view-details.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -17,7 +18,8 @@ import { RoutingModule } from './routing/routing.module';
     RepoViewComponent,
     SearchComponent,
     MenuComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    RepoViewDetailsComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
