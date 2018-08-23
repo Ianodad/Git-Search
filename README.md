@@ -12,59 +12,6 @@ Composed of two main components.
 - `Find Users` -search for users on git-hub based on their usernames.
 - `Find Repositories` -Display the user repositories corresponding to the user name
 
-## Dependencies Structure
-
-|
-|--src
-| |
-| |--app
-| | |
-| | |--class
-| | | |--repository.ts
-| | | |--search.ts
-| | | |--user.ts
-| | |--not-found
-| | | |--not-found.component.css
-| | | |--not-found.component.html
-| | | |--not-found.component.specc.ts
-| | | |--not-found.component.ts
-| | |--profile
-| | | |--profile.component.css
-| | | |--profile.component.html
-| | | |--profile.component.specc.ts
-| | | |--profile.component.ts
-| | |--repo-view
-| | | |--repo-view.component.css
-| | | |--repo-view.component.html
-| | | |--repo-view.component.specc.ts
-| | | |--repo-view.component.ts
-| | |--repo-view-details
-| | | |--repo-view-details.component.css
-| | | |--repo-view-details.component.html
-| | | |--repo-view-details.component.specc.ts
-| | | |--repo-view-details.component.ts
-| | |--routing
-| | | |--routing.component.css
-| | | |--routing.component.html
-| | | |--routing.component.specc.ts
-| | | |--routing.component.ts
-| | |--service
-| | | |--service.component.specc.ts
-| | | |--service.component.ts
-| | |--app.component.css
-| | |--app.component.html
-| | |--app.component.spec.ts
-| | |--app.component.ts
-| | |--filter.pipe.spec.ts
-| | |--filter.pipe.ts
-| | |--hover.directives.spec.ts
-| | |--hover.directives.ts
-| |
-| |--main.ts
-| |--index.html
-| |--styles.css
-|
-|--node_modules
 
 ## Angular Application Structure
 
@@ -86,6 +33,8 @@ PIPES and directives:
 
 - Highlight directive
 
+- Reverse the string to different order
+
 ## Specifications
 
 | Behavior                                      | Input                                    | Output                                                                                                   |
@@ -100,7 +49,7 @@ PIPES and directives:
 - Make sure you have all the Requirements or running angular apps installed such as node,npm, tsc and watchman
 - Clone the project into your machine
 
-##Running the Application ##
+## Running the Application ##
 1.Install Node.js 8.9 or higher. IMPORTANT: The server uses ES2015 features AND the Angular CLI so you need this versin of Node.js!!!!
 
 2.Run npm install to install app dependencies
