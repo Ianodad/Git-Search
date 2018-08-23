@@ -15,7 +15,7 @@ export class ProfileComponent implements OnInit {
 
 	constructor(private gitService: GitService) {}
 
-	toogleDetails(index) {
+	toogleDetails() {
 		this.user.showDetails = !this.user.showDetails;
 	}
 
