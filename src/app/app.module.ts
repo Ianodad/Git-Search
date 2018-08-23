@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { RoutingModule } from './routing/routing.module';
 import { HooverDirective } from './hoover.directive';
+import { TransformPipe } from './transform.pipe';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HooverDirective } from './hoover.directive';
     MenuComponent,
     NotFoundComponent,
     RepoViewDetailsComponent,
-    HooverDirective
+    HooverDirective,
+    TransformPipe
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
