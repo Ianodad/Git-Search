@@ -7,6 +7,9 @@ import { RepoViewComponent } from './repo-view/repo-view.component';
 import { SearchComponent } from './search/search.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { RoutingModule } from './routing/routing.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -14,8 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
     RepoViewComponent,
     SearchComponent,
     MenuComponent,
-    ProfileDetailsComponent,
-    RepoViewDetailsComponent
+    NotFoundComponent
   ],
   imports: [BrowserModule, HttpClientModule, FormsModule],
   providers: [],
