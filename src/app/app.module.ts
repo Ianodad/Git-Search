@@ -9,24 +9,25 @@ import { SearchComponent } from './search/search.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { RoutingModule } from './routing/routing.module';
+// import { RoutingModule } from './routing/routing.module';
 import { HooverDirective } from './hoover.directive';
 import { TransformPipe } from './transform.pipe';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    ProfileComponent,
-    RepoViewComponent,
-    SearchComponent,
-    MenuComponent,
-    NotFoundComponent,
-    RepoViewDetailsComponent,
-    HooverDirective,
-    TransformPipe
-  ],
-  imports: [BrowserModule, HttpClientModule, FormsModule],
-  providers: [],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		ProfileComponent,
+		RepoViewComponent,
+		SearchComponent,
+		MenuComponent,
+		// RoutingModule,
+		NotFoundComponent,
+		RepoViewDetailsComponent,
+		HooverDirective,
+		TransformPipe
+	],
+	imports: [ BrowserModule, HttpClientModule, FormsModule ],
+	providers: [],
+	bootstrap: [ AppComponent ]
 })
 export class AppModule {}

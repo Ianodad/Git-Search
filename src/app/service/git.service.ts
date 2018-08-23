@@ -16,7 +16,7 @@ export class GitService {
 	newRepos: any;
 
 	constructor(private http: HttpClient) {
-		this.user = new User('', '', '', '', '', '', '', '', '');
+		this.user = new User('', '', '', '', '', '', 0, 0, 0);
 		this.repos = new Repository('');
 	}
 
@@ -30,9 +30,9 @@ export class GitService {
 			html_url: string;
 			bio: string;
 			url: string;
-			public_repos: string;
-			followers: string;
-			following: string;
+			public_repos: number;
+			following: number;
+			followers: number;
 		}
 
 		let promise = new Promise((resolve, reject) => {
@@ -51,11 +51,11 @@ export class GitService {
 						this.user.bio = response.bio;
 						this.user.url = response.url;
 						this.user.public_repos = response.public_repos;
+						this.user.following = response.following;
 						this.user.followers = response.followers;
-						this.user.following = reponse.following;
 
 						// response ends here//
-						console.log(response);
+						console.log(response.following);
 						resolve();
 					},
 					(error) => {
@@ -67,7 +67,7 @@ export class GitService {
 		return promise;
 	}
 
-	getRepo() {
+	getRepo(userName = 'ianodad') {
 		interface ApiResponse {
 			name: string;
 			login: string;
@@ -77,7 +77,9 @@ export class GitService {
 		}
 		let promise = new Promise((resolve, reject) => {
 			this.http
-				.get<ApiResponse>('https://api.github.com/users/ianodad/repos?access_token=' + environment.accessToken)
+				.get<ApiResponse>(
+					'https://api.github.com/users/' + userName + '/repos?access_token=' + environment.accessToken
+				)
 				.toPromise()
 				.then(
 					(response) => {
