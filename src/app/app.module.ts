@@ -1,3 +1,5 @@
+import { MenuComponent } from './menu/menu.component';
+import { SearchComponent } from './search/search.component';
 import { RepoViewDetailsComponent } from './repo-view-details/repo-view-details.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -22,7 +24,8 @@ import { TransformPipe } from './transform.pipe';
 		NotFoundComponent,
 		RepoViewDetailsComponent,
 		HooverDirective,
-		TransformPipe
+		TransformPipe,
+		SearchComponent
 	],
 	imports: [ BrowserModule, HttpClientModule, FormsModule ],
 	providers: [],
