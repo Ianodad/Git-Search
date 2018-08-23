@@ -1,33 +1,6 @@
-<!-- <div class="container">
-  <app-search></app-search>
-  <div class="row">
-    <div class="card-deck w-50 col-md-4">
-      <div class="card">
-        <img class="card-img-top rounded " src={{user.avatar_url}} alt=" ">
-        <div class="card-body ">
-          <div class="user-name">
-            <h4 class="card-text">{{user.name |uppercase}}</h4>
-          </div>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="d-flex">
-              <p class="card-text mr-auto">Login Name</p>
-              <p class="card-text">{{user.login}}</p>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <button type="button" (click)='toogleDetails(i)' class="btn">More Details</button>
-            <div class="more-deatils ">
-              <app-profile-details *ngIf="user.showDetails" [user]='user'></app-profile-details>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div> -->
-<div class="container">
-  <div class="row">
-    <div class="card testimonial-card w-50 col-md-4">
+<div class="container-fluid">
+  <div class="row justify-content-center align-items-center ">
+    <div class="card testimonial-card w-50 col-md-6">
       <!-- Bacground color -->
       <div class="card-up indigo lighten-1">
       </div>
@@ -72,7 +45,9 @@
         </ul>
       </div>
     </div>
-    <div class="col-md-8 ">
+  </div>
+  <div class="row">
+    <div class="col-md-12 ">
       <app-repo-view></app-repo-view>
     </div>
   </div>

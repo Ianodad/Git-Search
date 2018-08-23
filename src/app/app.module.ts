@@ -7,9 +7,6 @@ import { RepoViewComponent } from './repo-view/repo-view.component';
 import { SearchComponent } from './search/search.component';
 import { MenuComponent } from './menu/menu.component';
 import { HttpClientModule } from '@angular/common/http';
-import { ProfileDetailsComponent } from './profile-details/profile-details.component';
-import { RepoViewDetailsComponent } from './repo-view-details/repo-view-details.component';
-
 @NgModule({
   declarations: [
     AppComponent,
