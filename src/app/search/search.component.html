@@ -1,0 +1,6 @@
+<form (ngSubmit)="search()" class="form-inline srch" autocomplete="off">
+  <input class="form-control inp mr-2" placeholder="Username" name="newname" [(ngModel)]="this.searchstring">
+  <button class="btn btn-primary" type="submit">
+    <i class="fas fa-search"></i>
+  </button>
+</form>

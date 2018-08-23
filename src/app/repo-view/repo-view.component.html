@@ -1,12 +1,11 @@
-<div class="container-fluid d-flex  align-content-start flex-wrap">
-  <div class="card border-success mb-3 m-2 row  w-50 " style="max-width: 20rem;" *ngFor='let repo of newRepos.newRepos' appHover>
+<div class="container d-flex flex-wrap">
+  <div class="card border-success mb-3 m-2 row" *ngFor='let repo of newRepos.newRepos' appHoover>
     <div class="card-header bg-transparent border-success">
-      <div class="repo-head d-flex">
-        <h2 class="mr-auto">{{repo.name | uppercase}}
-        </h2>
-      </div>
-    </div>
-    <!-- <div class="card-body text-success"> -->
+      <h2>{{repo.name | uppercase}}
+      </h2>
+      <button type="button" class="btn btn-outline-warning" (click)='toogleDetails()'>
+        <a routerLink='/repo-view-details' routerLinkActive='active'>More</a>
+      </button>
 
     <!-- <app-repo-view-details></app-repo-view-details> -->
 
@@ -17,3 +16,4 @@
     </div>
   </div>
 </div>
+<!-- <router-outlet></router-outlet> -->

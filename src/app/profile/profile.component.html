@@ -1,83 +1,68 @@
-<!-- <div class="container">
-  <app-search></app-search>
-  <div class="row">
-    <div class="card-deck w-50 col-md-4">
-      <div class="card">
-        <img class="card-img-top rounded " src={{user.avatar_url}} alt=" ">
-        <div class="card-body ">
-          <div class="user-name">
-            <h4 class="card-text">{{user.name |uppercase}}</h4>
-          </div>
-        </div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <div class="d-flex">
-              <p class="card-text mr-auto">Login Name</p>
-              <p class="card-text">{{user.login}}</p>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <button type="button" (click)='toogleDetails(i)' class="btn">More Details</button>
-            <div class="more-deatils ">
-              <app-profile-details *ngIf="user.showDetails" [user]='user'></app-profile-details>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div> -->
-<div class="container-fluid">
-  <div class="row mt-5 d-flex">
-    <div class="card testimonial-card w-50 col-md-6 mx-auto">
+<div class="container-fluid mt-4">
+  <div class="row justify-content-center align-items-center ">
+    <div class="card testimonial-card w-50 col-md-6">
       <!-- Bacground color -->
       <div class="card-up indigo lighten-1">
       </div>
       <!-- Avatar -->
-      <div class="avatar mx-auto white">
-        <img src={{user.avatar_url}} class="profile rounded-circle  mx-auto">
+      <div class="avatar mx-auto white d-flex justify-content-center">
+        <img src={{user.avatar_url}} class="rounded-circle mt-3 ">
       </div>
       <div class="card-body">
         <!-- Name -->
-        <h4 class="card-title">{{user.name |uppercase}}</h4>
+        <h4 class="card-title">{{user.name |uppercase|transform}}</h4>
         <hr>
         <!-- Quotation -->
         <p>
           <i class="fa fa-quote-left"></i> {{user.bio}}</p>
-        <a class="link-text">
-          <h5 class="waves-light" (click)='toogleDetails()'>Read more
-            <i class="fa fa-chevron-right waves-light"></i>
-          </h5>
-        </a>
-        <ul class="list-group list-group-flush" *ngIf="user.showDetails">
-          <li class="list-group-item">
-            <div class="d-flex">
-              <p class="card-text mr-auto">Login Name</p>
-              <p class="card-text">{{ user.login }}</p>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="repos d-flex">
-              <p class="card-text mr-auto">Repos Url</p>
-              <a href={{user.html_url}} target="_top ">Click here to view</a>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="view d-flex">
-              <p class="card-text mr-auto ">View Repos</p>
-              <p>
-                <a href={{user.public_repos}} target="_top ">Click here to view</a>
-              </p>
-            </div>
-          </li>
-          <li class="list-group-item">
-            <div class="profile d-flex ">
-              <p class="card-text mr-auto">Number of Repos</p>
-              <p class="card-text float-right ">{{user.public_repos}}</p>
-            </div>
-          </li>
-        </ul>
+        <button type="button" (click)='toogleDetails()' class="btn">More Details</button>
+        <div class="readmore" *ngIf="user.showDetails">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <div class="d-flex">
+                <p class="card-text mr-auto">Login Name</p>
+                <p class="card-text">{{user.login}}</p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="repos d-flex">
+                <p class="card-text mr-auto">Repos Url</p>
+                <a href={{user.html_url}} target="_top ">Click here to view</a>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="view d-flex">
+                <p class="card-text mr-auto ">View Repos</p>
+                <p>
+                  <a href={{user.public_repos}} target="_top ">Click here to view</a>
+                </p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="profile d-flex ">
+                <p class="card-text mr-auto">Number of Repos</p>
+                <p class="card-text float-right ">{{user.public_repos }}</p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="profile d-flex ">
+                <p class="card-text mr-auto">Following</p>
+                <p class="card-text float-right ">{{user.following }}</p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="profile d-flex ">
+                <p class="card-text mr-auto">Followers</p>
+                <p class="card-text float-right ">{{user.followers}}</p>
+              </div>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-    <div class="col-md-12 ml-auto mt-4">
+  </div>
+  <div class="row">
+    <div class="col-md-12 ">
       <app-repo-view></app-repo-view>
     </div>
   </div>

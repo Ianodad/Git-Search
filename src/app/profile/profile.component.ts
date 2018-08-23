@@ -5,24 +5,23 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-profile',
-  templateUrl: './profile.component.html',
-  providers: [GitService],
-  styleUrls: ['./profile.component.css']
+	selector: 'app-profile',
+	templateUrl: './profile.component.html',
+	providers: [ GitService ],
+	styleUrls: [ './profile.component.css' ]
 })
 export class ProfileComponent implements OnInit {
-  user: User;
-  userName: any;
+	user: User;
 
-  constructor(private gitService: GitService) {}
+	constructor(private gitService: GitService) {}
 
-  toogleDetails(index) {
-    this.user.showDetails = !this.user.showDetails;
-  }
+	toogleDetails(index) {
+		this.user.showDetails = !this.user.showDetails;
+	}
 
-  ngOnInit() {
-    this.gitService.gitUser(this.userName);
-    this.user = this.gitService.user;
-    console.log(this.user);
-  }
+	ngOnInit() {
+		this.gitService.gitUser();
+		this.user = this.gitService.user;
+		console.log(this.user);
+	}
 }
