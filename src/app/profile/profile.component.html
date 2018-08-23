@@ -1,21 +1,21 @@
-<div class="container-fluid">
+<div class="container-fluid mt-4">
   <div class="row justify-content-center align-items-center ">
     <div class="card testimonial-card w-50 col-md-6">
       <!-- Bacground color -->
       <div class="card-up indigo lighten-1">
       </div>
       <!-- Avatar -->
-      <div class="avatar mx-auto white">
-        <img src={{user.avatar_url}} class="rounded-circle w-50">
+      <div class="avatar mx-auto white d-flex justify-content-center">
+        <img src={{user.avatar_url}} class="rounded-circle mt-3 ">
       </div>
       <div class="card-body">
         <!-- Name -->
-        <h4 class="card-title">{{user.name |uppercase}}</h4>
+        <h4 class="card-title">{{user.name |uppercase|transform}}</h4>
         <hr>
         <!-- Quotation -->
         <p>
           <i class="fa fa-quote-left"></i> {{user.bio}}</p>
-          <button type="button" (click)='toogleDetails()' class="btn">More Details</button>
+        <button type="button" (click)='toogleDetails()' class="btn">More Details</button>
         <div class="readmore" *ngIf="user.showDetails">
           <ul class="list-group list-group-flush">
             <li class="list-group-item">
@@ -41,7 +41,19 @@
             <li class="list-group-item">
               <div class="profile d-flex ">
                 <p class="card-text mr-auto">Number of Repos</p>
-                <p class="card-text float-right ">{{user.public_repos}}</p>
+                <p class="card-text float-right ">{{user.public_repos | transform }}</p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="profile d-flex ">
+                <p class="card-text mr-auto">Following</p>
+                <p class="card-text float-right ">{{user.following | transform }}</p>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="profile d-flex ">
+                <p class="card-text mr-auto">Followers</p>
+                <p class="card-text float-right ">{{user.followers| transform }}</p>
               </div>
             </li>
           </ul>
