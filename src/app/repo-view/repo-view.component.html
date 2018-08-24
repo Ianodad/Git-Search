@@ -6,14 +6,10 @@
       <button type="button" class="btn btn-outline-warning" (click)='toogleDetails()'>
         <a routerLink='/repo-view-details' routerLinkActive='active'>More</a>
       </button>
-
-    <!-- <app-repo-view-details></app-repo-view-details> -->
-
-    <!-- </div> -->
-    <div class="card-footer bg-transparent border-success d-flex">
-      <h2 class="mr-auto">USER</h2>
-      <h2>{{repo.owner.login}}</h2>
+      <div class="card-footer bg-transparent border-success d-flex">
+        <h2 class="mr-auto">USER</h2>
+        <h2>{{repo.owner.login}}</h2>
+      </div>
     </div>
   </div>
-</div>
-<!-- <router-outlet></router-outlet> -->
+  <router-outlet></router-outlet>

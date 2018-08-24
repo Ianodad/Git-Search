@@ -12,6 +12,14 @@ import { NotFoundComponent } from './not-found/not-found.component';
 // import { RoutingModule } from './routing/routing.module';
 import { HooverDirective } from './hoover.directive';
 import { TransformPipe } from './transform.pipe';
+import { RouterModule, Routes } from '@angular/router';
+
+const routes: Routes = [
+	{ path: 'profile', component: ProfileComponent },
+	{ path: 'repo-view-details', component: RepoViewDetailsComponent },
+	{ path: '', redirectTo: '/profile', pathMatch: 'full' },
+	{ path: '**', component: NotFoundComponent }
+];
 
 @NgModule({
 	declarations: [
@@ -27,7 +35,7 @@ import { TransformPipe } from './transform.pipe';
 		TransformPipe,
 		SearchComponent
 	],
-	imports: [ BrowserModule, HttpClientModule, FormsModule ],
+	imports: [ BrowserModule, HttpClientModule, FormsModule, RouterModule.forRoot(routes) ],
 	providers: [],
 	bootstrap: [ AppComponent ]
 })

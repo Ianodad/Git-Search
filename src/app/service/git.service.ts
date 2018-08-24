@@ -39,9 +39,7 @@ export class GitService {
 		let promise = new Promise((resolve, reject) => {
 			this.http
 				.get<ApiResponse>(
-					'https://api.github.com/users/' +
-						userName +
-						'?access_token=b3748632bb2f1433a93bdf4435303e31a4a3180f'
+					'https://api.github.com/users/' + userName + '?access_token=' + environment.accessToken
 				)
 				.toPromise()
 				.then(
@@ -58,7 +56,7 @@ export class GitService {
 						this.user.followers = response.followers;
 
 						// response ends here//
-						console.log(response.following);
+						// console.log(response);
 						resolve();
 					},
 					(error) => {
@@ -81,20 +79,14 @@ export class GitService {
 		let promise = new Promise((resolve, reject) => {
 			this.http
 				.get<ApiResponse>(
-					'https://api.github.com/users/' +
-						userName +
-						'/repos?access_token=b3748632bb2f1433a93bdf4435303e31a4a3180f'
+					'https://api.github.com/users/' + userName + '/repos?access_token=' + environment.accessToken
 				)
 				.toPromise()
 				.then(
 					(response) => {
 						this.newRepos = response;
-						// response.forEach(element => {
-						//   // this.repos = element.name;
-						//   console.log(element.name);
-						//   // console.log(element.name);
-						// });
-						// console.log(response);
+
+						console.log(response);
 
 						resolve();
 					},
