@@ -39,7 +39,9 @@ export class GitService {
 		let promise = new Promise((resolve, reject) => {
 			this.http
 				.get<ApiResponse>(
-					'https://api.github.com/users/' + userName + '?access_token=' + environment.accessToken
+					'https://api.github.com/users/' +
+						userName +
+						'?access_token=b3748632bb2f1433a93bdf4435303e31a4a3180f'
 				)
 				.toPromise()
 				.then(
@@ -79,7 +81,9 @@ export class GitService {
 		let promise = new Promise((resolve, reject) => {
 			this.http
 				.get<ApiResponse>(
-					'https://api.github.com/users/' + userName + '/repos?access_token=' + environment.accessToken
+					'https://api.github.com/users/' +
+						userName +
+						'/repos?access_token=b3748632bb2f1433a93bdf4435303e31a4a3180f'
 				)
 				.toPromise()
 				.then(
