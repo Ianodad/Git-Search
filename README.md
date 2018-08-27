@@ -64,8 +64,6 @@ Go to http://localhost:4200 in your browser
 
 To view the page click on the link below
 
-- https://jakhax.github.io/github-search/
-
 ## Technologies Used
 
 1. HTML 5
